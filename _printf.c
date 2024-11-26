@@ -1,5 +1,12 @@
 #include <stdarg.h>
 #include <unistd.h>
+#include "main.h"
+/**
+ * get_function - gets the function depending on the caractere placed in option.
+ * @args: list of arguments
+ * @format: string
+ * Return: it depends
+ */
 int get_function(va_list args, const char *format)
 {
 	if (format[1] == 's')
@@ -10,7 +17,7 @@ int get_function(va_list args, const char *format)
 }
 /**
  * _printf - will look through the string for the % first, then the option, or straight for the args
- * @format: string of args
+ * @format: string
  * Return: len
  */
 int _printf(const char *format, ...)
