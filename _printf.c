@@ -77,8 +77,8 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	while(format[++i]) // permet d'eviter une incrementation qui traine et qui pourrait faire defaut si jamais oubli√e.
 	{
-		if (format[i] == '%' && fonction2(format[i + 1]))
-			len += format_string(args, format + i++);
+		if (format[i] == '%' && get_function(format[i + 1]))
+			len += get_function(args, format + i++);
 		else
 		{
 			write(1, &format[i], 1);
