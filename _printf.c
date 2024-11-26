@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include <unistd.h>
+#include "main.h"
 
 /**
  * print_number - print a number
@@ -36,7 +37,7 @@ int print_number(int n)
 
 	while (i--)
 	{
-		write(1, &buffer[i], 1)
+		write(1, &buffer[i], 1);
 		len++;
 	}
 
@@ -52,9 +53,9 @@ int print_number(int n)
 int get_function(va_list args, const char *format)
 {
 	if (format[1] == 's')
-		return (_putstr(va_args(args, char *)));
+		return (_putstr(va_arg(args, char *)));
 	if (format[1] == 'c')
-		return (_putchar(va_args(args char *)));
+		return (_putchar(va_arg(args, int)));
 	if (format[1] == '%')
 		return (_putchar('%'));
 	if (format[1] == 'd' || format[1] == 'i')
@@ -70,13 +71,13 @@ int get_function(va_list args, const char *format)
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i = -1; // i = -1 pour incrementer i facilement dans le while.
+	int i = -1; /*i = -1 pour incrementer i facilement dans le while.*/
 	int len = 0;
 
 	va_start(args, format);
 	while(format[++i]) // permet d'eviter une incrementation qui traine et qui pourrait faire defaut si jamais oubli√e.
 	{
-		if (format[i] == '%' et fonction2(format[i + 1]))
+		if (format[i] == '%' && fonction2(format[i + 1]))
 			len += format_string(args, format + i++);
 		else
 		{

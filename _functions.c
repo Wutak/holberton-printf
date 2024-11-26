@@ -5,7 +5,7 @@
  * @s: string
  * Return: Nothing.
  */
-void _putstr(char *s)
+int _putstr(char *s)
 {
 	int i = 0;
 
@@ -22,7 +22,7 @@ void _putstr(char *s)
  * Return: nothing
  */
 
-void _putchar(char c)
+int _putchar(char c)
 {
 	write(1, &c, 1);
 }
