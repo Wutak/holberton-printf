@@ -24,7 +24,10 @@ void _putchar(char c)
 void _putnbr(int n)
 {
 	if (n == -2147483648)
-		return ("Error");
+	{
+		write(1, -2147483648, 11);
+		return ();
+	}
 	
 	if (n < 0)
 	{
@@ -33,5 +36,6 @@ void _putnbr(int n)
 	}
 	if (n  >= 10)
 		_putnbr(n / 10);
-	_putchar(n % 10 = '0');
+
+	_putchar(n % 10 + '0');
 }
