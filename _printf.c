@@ -52,13 +52,13 @@ int print_number(int n)
  */
 int get_function(va_list args, const char *format)
 {
-	if (format[1] == 's')
+	if (format[0] == 's')
 		return (_putstr(va_arg(args, char *)));
-	if (format[1] == 'c')
+	if (format[0] == 'c')
 		return (_putchar(va_arg(args, int)));
-	if (format[1] == '%')
+	if (format[0] == '%')
 		return (_putchar('%'));
-	if (format[1] == 'd' || format[1] == 'i')
+	if (format[0] == 'd' || format[1] == 'i')
 		return (print_number(va_arg(args, int)));
 	return (0);
 }
@@ -75,10 +75,10 @@ int _printf(const char *format, ...)
 	int len = 0;
 
 	va_start(args, format);
-	while(format[++i]) // permet d'eviter une incrementation qui traine et qui pourrait faire defaut si jamais oubli√e.
+	while(format[++i]) /*permet d'eviter une incrementation qui traine et qui pourrait faire defaut si jamais oubliee.*/
 	{
-		if (format[i] == '%' && get_function(format[i + 1]))
-			len += get_function(args, format + i++);
+		if (format[i] == '%' && format[i + 1] != '\0')
+			len += get_function(args, &format[++i]);
 		else
 		{
 			write(1, &format[i], 1);
