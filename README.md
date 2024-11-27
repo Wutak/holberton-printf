@@ -14,5 +14,11 @@ Requirements:
 * The prototype of all your functions should be included in your header file called main.h
 * All your header files should be include guarded
 
+Exemples:
+
+Man page:
+
+Testing:
+
 Flowchart:
 
