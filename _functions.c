@@ -1,7 +1,7 @@
 #include <unistd.h>
 
 /**
- * _putstr - put a string in database.
+ * _putstr - put a string in database
  * @s: string
  * Return: Nothing.
  */
@@ -15,12 +15,20 @@ void _putstr(char *s)
 		i++;
 	}
 }
-
+/**
+ * _putchar - put a character in database
+ * @c: character
+ * Return: Nothing
+ */
 void _putchar(char c)
 {
 	write(1, &c, 1);
 }
-
+/**
+ * _putnbr - put a number in database
+ * @n: number
+ * Return: 0
+ */
 int _putnbr(int n)
 {
 	if (n == -2147483648)

@@ -15,10 +15,17 @@ Requirements:
 * All your header files should be include guarded
 
 Exemples:
+_printf("Negative:[%d]\n", -762534)
+output: Negative: -762534.
+
+_printf("String:[%s]\n", "I am a string !");
+output: String: [I am a string!]
 
 Man page:
+man ./_printf.1
 
 Testing:
+./a.out
 
 Flowchart:
-
+https://lucid.app/lucidchart/600839a0-2508-493d-b736-5ec91051b96a/edit?viewport_l[…]1263%2C0_0&invitationId=inv_ea5d2e94-d6a4-458f-9576-c45125b3689f

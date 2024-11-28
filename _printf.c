@@ -46,7 +46,7 @@ int _printf(const char *format, ...)
 	int len = 0;
 	/*
 	 * len will determine the number of arguments in the string.
-	*/
+	 */
 
 	if (!format)
 		return (0);
