@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include "main.h"
 /**
- * get_function - gets the function depending on the caractere placed in option.
+ * get_function - gets the function depending on the caractere placed in option
  * @args: list of arguments
  * @format: string
  * Return: it depends
@@ -14,11 +14,11 @@ int get_function(va_list args, const char *format)
 	else if (format[1] == 'c')
 		return (_putchar(va_args(args int)));
 	else if (format[1] == '%')
-		return (_putchar('%');
+		return (_putchar('%'));
 	else if (format[1] == 'd')
-		return (_putnbr(va_args(args int)), "0123456789");
+		return (_putnbr(va_args(args int)));
 	else if (format[1] == 'i')
-		return (_putnbr(va_args(args int)), "0123456789");
+		return (_putnbr(va_args(args int)));
 	return (0);
 }
 /**
@@ -28,11 +28,14 @@ int get_function(va_list args, const char *format)
  */
 int can_be_formatted(char c)
 {
-	return (c == 's' || c == 'd' || c == 'i' || c == '%' || c == 'c') //will check to determine if c is recognized as an option.
+	return (c == 's' || c == 'd' || c == 'i' || c == '%' || c == 'c');
+		/*
+		 * will check to determine if c is recognized as an option.
+		 */
 }
 
 /**
- * _printf - will look through the string for the % first, then the option, or print the character if no % was found
+ * _printf - function that print a character or a string of characters.
  * @format: string
  * Return: len
  */
@@ -40,13 +43,27 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int i = -1;
-	int len = 0; //len will determine the number of arguments in the string.
+	int len = 0;
+	/*
+	 * len will determine the number of arguments in the string.
+	*/
+
+	if (!format)
+		return (0)
 
 	va_start(args, format);
-	while(format[++i])
+	while (format[++i])
 	{
-		if (format[i] == '%' && can_be_formatted(format[i + 1])) //checks if i == %, if it is, check if the next character is recognized as an option.
-			len += get_function(args, format + i++); //will get the adapted function based on the option and will add it to the length of the string.
+		if (format[i] == '%' && can_be_formatted(format[i + 1]))
+/*
+ * checks if i == %, if it is,
+ * check if the next character is recognized as an option.
+ */
+			len += get_function(args, format + i++);
+/*
+ * will find the adapted function based on the option,
+ * and add it to the len of the string.
+ */
 		else
 		{
 			write(1, &format[i], 1);

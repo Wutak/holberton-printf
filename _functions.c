@@ -28,7 +28,6 @@ void _putnbr(int n)
 		write(1, "-2147483648", 11);
 		return ();
 	}
-	
 	if (n < 0)
 	{
 		_putchar('-');
