@@ -21,12 +21,12 @@ void _putchar(char c)
 	write(1, &c, 1);
 }
 
-void _putnbr(int n)
+int _putnbr(int n)
 {
 	if (n == -2147483648)
 	{
 		write(1, "-2147483648", 11);
-		return ();
+		return (0);
 	}
 	if (n < 0)
 	{
@@ -37,4 +37,5 @@ void _putnbr(int n)
 		_putnbr(n / 10);
 
 	_putchar(n % 10 + '0');
+	return (0);
 }

@@ -10,15 +10,15 @@
 int get_function(va_list args, const char *format)
 {
 	if (format[1] == 's')
-		return (_putstr(va_args(args, char *)));
+		return (_putstr(va_arg(args, char *)));
 	else if (format[1] == 'c')
-		return (_putchar(va_args(args int)));
+		return (_putchar(va_arg(args, int)));
 	else if (format[1] == '%')
 		return (_putchar('%'));
 	else if (format[1] == 'd')
-		return (_putnbr(va_args(args int)));
+		return (_putnbr(va_arg(args, int)));
 	else if (format[1] == 'i')
-		return (_putnbr(va_args(args int)));
+		return (_putnbr(va_arg(args, int)));
 	return (0);
 }
 /**
@@ -49,7 +49,7 @@ int _printf(const char *format, ...)
 	*/
 
 	if (!format)
-		return (0)
+		return (0);
 
 	va_start(args, format);
 	while (format[++i])
