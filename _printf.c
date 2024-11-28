@@ -2,7 +2,7 @@
 #include <unistd.h>
 
 /**
- * _printf - will look through the string for the % first, then the option, or straight for the args
+ * _printf - functionn to print a character or a string of characters
  * @format: string of args
  * Return: len
  */
