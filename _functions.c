@@ -21,6 +21,7 @@ int _putstr(char *s)
 	return (i);
 }
 
+
 /**
  * _putchar - writes a single char to the output
  * @c: char to be printed
