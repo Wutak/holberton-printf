@@ -44,16 +44,14 @@ int _putnbr(int n)
 	}
 	if (n < 0)
 	{
-		_putchar('-');
+		count += _putchar('-');
 		n = -n;
-		count++;
 	}
 	if (n  >= 10)
 	{
-		len++;
-		_putnbr(n / 10);
+		count += _putnbr(n / 10);
 	}
 
-	_putchar(n % 10 + '0');
+	count += _putchar((n % 10) + '0');
 	return (count);
 }
