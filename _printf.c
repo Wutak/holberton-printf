@@ -35,8 +35,8 @@ int can_be_formatted(char c)
 }
 
 /**
- * _printf - function that print a character or a string of characters.
- * @format: string
+ * _printf - functionn to print a character or a string of characters
+ * @format: string of args
  * Return: len
  */
 int _printf(const char *format, ...)
