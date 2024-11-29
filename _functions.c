@@ -16,6 +16,7 @@ void _putstr(char *s)
 		write(1, &s[i], 1);
 		i++;
 	}
+	return (i);
 }
 /**
  * _putchar - put a character in database
