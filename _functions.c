@@ -5,7 +5,7 @@
  * @s: string
  * Return: Nothing.
  */
-void _putstr(char *s)
+int _putstr(char *s)
 {
 	int i = 0;
 
