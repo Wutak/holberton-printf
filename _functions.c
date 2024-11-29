@@ -49,9 +49,11 @@ int _putnbr(int n)
 		len++;
 	}
 	if (n  >= 10)
+	{
 		len++;
 		_putnbr(n / 10);
-
+	}
+	
 	_putchar(n % 10 + '0');
 	return (len);
 }
