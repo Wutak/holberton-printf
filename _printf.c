@@ -19,7 +19,7 @@ int get_function(va_list args, const char *format)
 		return (_putnbr(va_arg(args, int)));
 	else if (format[1] == 'i')
 		return (_putnbr(va_arg(args, int)));
-	return (0);
+	return (-1);
 }
 /**
  * can_be_formatted - return the corresponding character
@@ -49,7 +49,7 @@ int _printf(const char *format, ...)
 	 */
 
 	if (!format)
-		return (0);
+		return (-1);
 
 	va_start(args, format);
 	while (format[++i])
