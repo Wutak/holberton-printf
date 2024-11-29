@@ -23,7 +23,7 @@ int _putstr(char *s)
  * @c: character
  * Return: Nothing
  */
-void _putchar(char c)
+int _putchar(char c)
 {
 	write(1, &c, 1);
 }
