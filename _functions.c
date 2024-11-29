@@ -35,7 +35,7 @@ int _putchar(char c)
  */
 int _putnbr(int n)
 {
-	int len = 0;
+	int count = 0;
 
 	if (n == -2147483648)
 	{
@@ -46,7 +46,7 @@ int _putnbr(int n)
 	{
 		_putchar('-');
 		n = -n;
-		len++;
+		count++;
 	}
 	if (n  >= 10)
 	{
@@ -55,5 +55,5 @@ int _putnbr(int n)
 	}
 
 	_putchar(n % 10 + '0');
-	return (len);
+	return (count);
 }
