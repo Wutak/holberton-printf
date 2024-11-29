@@ -10,7 +10,7 @@ void _putstr(char *s)
 	int i = 0;
 
 	if (!s)
-		s = "(null)';
+		s = "(null)";
 	while (s[i] != '\0')
 	{
 		write(1, &s[i], 1);
